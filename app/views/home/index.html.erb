@@ -23,4 +23,9 @@
 			<td><%= submit_tag "Processar" %></td>
 		</tr>
 	</table>
-<% end %>  
+<% end %>
+
+<% if not @arq_name.nil? %>
+	<hr />
+	<%= link_to "Download da Legenda '#{@arq_name}'", download_path(:arq_name => @arq_name) %>  
+<% end %>

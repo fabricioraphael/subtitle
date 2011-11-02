@@ -3,4 +3,5 @@ Subtitle::Application.routes.draw do
   resources :home
   
   match "upload" => "home#upload"
+  match "download" => "home#download"
 end

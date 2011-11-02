@@ -1,4 +1,5 @@
-class Home < ActiveRecord::Base
+class Home < ActiveRecord::Base  
+  
    @@path = "#{RAILS_ROOT}/public/uploads"
 
    def save_file arq
@@ -42,8 +43,8 @@ class Home < ActiveRecord::Base
          x += 1
        end
      end
-  end
-
+   end
+  
    def calcular horario, value, operacao
      array = horario.to_s.scan(/\d{2}/).to_a
      hor = array[0].to_i
