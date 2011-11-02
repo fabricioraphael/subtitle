@@ -1,3 +1,29 @@
 <h1>Subtitle</h1>
-<em>fabricioraphael.b@gmail.com</em>
+<em>fabricioraphael.b@gmail.com</em> <br /> <br />
+<hr />
 
+
+<%= form_for (@home, :url => {:action => :upload}, :html => { :multipart => true }, :id => :upload) do |h| %>
+	<table>
+    <tr>
+      <td><%= h.label "Arquivo.srt" %> </td>
+      <td><%= h.file_field :arq , :id => "arq" %> </td>
+		</tr>
+		<tr><td><hr /></td><td><hr /></td></tr>
+
+		<tr>
+      <td>
+				<%= h.radio_button :operacao , true %> <%= h.label "+" %>
+				<%= h.radio_button :operacao , false %> <%= h.label "-" %>
+			</td>
+      <td><%= h.text_field :value, :id => "value" %></td>
+		</tr>
+		<tr>
+      <td><%= h.label "Valor" %> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td><%= submit_tag "Upload" %></td>
+		</tr>
+	</table>
+<% end %>  

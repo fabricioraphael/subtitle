@@ -1,7 +1,8 @@
 class CreateHomes < ActiveRecord::Migration
   def self.up
     create_table :homes do |t|
-
+      t.integer :value
+      t.boolean :operacao
       t.timestamps
     end
   end
