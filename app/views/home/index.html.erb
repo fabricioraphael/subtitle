@@ -12,18 +12,15 @@
 		<tr><td><hr /></td><td><hr /></td></tr>
 
 		<tr>
+      <td><%= h.text_field :value, :id => "value", :size => 5 %></td>
       <td>
-				<%= h.radio_button :operacao , true %> <%= h.label "+" %>
-				<%= h.radio_button :operacao , false %> <%= h.label "-" %>
+				<%= h.radio_button :operacao , true %> <%= h.label "Somar" %> |
+				<%= h.radio_button :operacao , false %> <%= h.label "Subtrair" %>
 			</td>
-      <td><%= h.text_field :value, :id => "value" %></td>
 		</tr>
 		<tr>
-      <td><%= h.label "Valor" %> </td>
-			<td> </td>
-		</tr>
-		<tr>
-			<td><%= submit_tag "Upload" %></td>
+			<td></td>
+			<td><%= submit_tag "Processar" %></td>
 		</tr>
 	</table>
 <% end %>  

@@ -12,8 +12,8 @@ class HomeController < ApplicationController
     
     @home.save_file @arq
     
-    @arq_final = @home.read_arq params[:value].to_i, params[:operacao], @arq_name
-    # p "-------------- ARQ -------------- #{@arq_final}"
+    @arq_final = @home.read_arq params[:home][:value].to_i, params[:home][:operacao], @arq_name
+
     @home.write_arq @arq_final, @arq_name
   end
 end

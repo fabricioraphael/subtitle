@@ -18,9 +18,14 @@ class Home < ActiveRecord::Base
           arq.size.times do |line|
             if arq[line] =~ /\d{2}:\d{2}:\d{2}/
               horario = arq[line].to_s.scan(/\d{2}:\d{2}:\d{2}/)
+              
               horario1 = calcular horario[0], value, operacao
               horario2 = calcular horario[1], value, operacao
-              arq_final << arq[line]
+                            
+              str = arq[line].to_s.gsub(horario[0],horario1.to_s)
+              str = str.to_s.gsub(horario[1],horario2.to_s)              
+              
+              arq_final << str
             else
               arq_final << arq[line]
             end
@@ -44,7 +49,7 @@ class Home < ActiveRecord::Base
      hor = array[0].to_i
      min = array[1].to_i
      seg = array[2].to_i
-     if operacao == true
+     if operacao == "true"
        horario = som seg, min, hor, value
      else
        horario = sub seg, min, hor, value
