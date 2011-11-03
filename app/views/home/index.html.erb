@@ -3,7 +3,7 @@
 <hr />
 
 
-<%= form_for (@home, :url => {:action => :upload}, :html => { :multipart => true }, :id => :upload) do |h| %>
+<%= form_for (@home, :url => {:action => 'upload'}, :html => { :multipart => true}) do |h| %>
 	<table>
     <tr>
       <td><%= h.label "Arquivo.srt" %> </td>
