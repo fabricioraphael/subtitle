@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Home < ActiveRecord::Base  
   
    @@path = "#{RAILS_ROOT}/public/uploads"
