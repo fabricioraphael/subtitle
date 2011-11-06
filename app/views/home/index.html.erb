@@ -1,15 +1,13 @@
-<h1>Subtitle</h1>
+<h1><%= link_to "Subtitle", root_path %> </h1>
 <em>fabricioraphael.b@gmail.com</em> <br /> <br />
 <hr />
-
-
 
 <%= form_for @home, :url => { :action => :upload }, :html => {:multipart => true} do |h| %>
 
 	<table>
     <tr>
       <td><%= h.label "Arquivo.srt" %> </td>
-      <td><%= h.file_field :arq , :id => "arq" %> </td>
+      <td><%= file_field :arq , :id => "arq" %> </td>
 		</tr>
 		<tr><td><hr /></td><td><hr /></td></tr>
 
