@@ -6,7 +6,7 @@ class Home < ActiveRecord::Base
    def save_file arq
      if not arq.nil?  
        filepath = "#{@@path}/#{arq.original_filename}"   
-       File.open(filepath, "wb") do |f|  
+       File.open(filepath, "w") do |f|  
          f.write(arq.read)  
        end  
      end
