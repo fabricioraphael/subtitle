@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @home = Home.new
     @arq_final = Array.new
   
-    @arq = params[:arq]
+    @arq = params[:arq][:"{:id=>%22arq%22}"]
     
     puts "=========================== NIL? #{@arq.nil?}"
     puts "=========================== WTF? #{@arq}"
