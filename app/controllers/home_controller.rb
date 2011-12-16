@@ -8,15 +8,9 @@ class HomeController < ApplicationController
     @home = Home.new
     @arq_final = Array.new
   
-    @arq = params[:arq][:"{:id=>%22arq%22}"]
+    @arq = params[:arq][:idarq]
     
-    puts "=========================== NIL? #{@arq.nil?}"
-    puts "=========================== WTF? #{@arq}"
-    puts "=========================== class #{@arq.class}"
-    puts "=========================== name: #{@arq.original_filename}"    
     @arq_name = @arq.original_filename
-    puts "=========================== NIL2? #{@arq_name.nil?}"
-    puts "=========================== class2 #{@arq_name.class}"
     @home.save_file @arq
         
     @arq_final = @home.read_arq params[:home][:value].to_i, params[:home][:operacao], @arq_name
